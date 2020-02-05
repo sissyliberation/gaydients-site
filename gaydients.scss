@@ -68,3 +68,19 @@
 .enby {
   background: gaydient-enby();
 }
+
+@function gaydient-genderqueer($lavender: #b77fdd, $white: #fff, $green: #48821e, $opacity: 1) {
+  $sections: 3;
+  
+  @return linear-gradient(to right,   
+    rgba($lavender, $opacity) #{100% / $sections}, 
+    rgba($white, $opacity) #{100% / $sections}, 
+    rgba($white, $opacity) #{100% / $sections * 2},
+    rgba($green, $opacity) #{100% / $sections * 2},
+    rgba($green, $opacity) 100%
+  );
+}
+
+.genderqueer {
+  background: gaydient-genderqueer();
+}
