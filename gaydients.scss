@@ -1,0 +1,15 @@
+.rainbow {
+  background: linear-gradient(to right,
+    red calc(100% / 6),
+    orange  calc(100% / 6),
+    orange  calc(100% / 6 * 2),
+    yellow   calc(100% / 6 * 2),
+    yellow   calc(100% / 6 * 3),
+    green calc(100% / 6 * 3),
+    green calc(100% / 6 * 4),
+    blue  calc(100% / 6 * 4),
+    blue calc(100% / 6 * 5),
+    purple calc(100% / 6 * 5),
+    purple 100%
+  );
+}
