@@ -2,7 +2,7 @@
   width: 100%;
   height: 140px;
   box-shadow: 0 8px 16px rgba(35, 20, 29, .2);
-  border-radius: 4px;
+  border-radius: 6px;
   
   &:not(:first-child) {
     margin-top: 32px;
@@ -12,13 +12,13 @@
 @function gaydient-rainbow($red: red, $orange: orange, $yellow: yellow, $green: green, $blue: blue, $purple: purple, $opacity: 1) {
   @return linear-gradient(to right,   
     rgba($red, $opacity) calc(100% / 6), 
-    rgba($orange, $opacity)  calc(100% / 6), 
-    rgba($orange, $opacity)  calc(100% / 6 * 2),
-    rgba($yellow, $opacity)   calc(100% / 6 * 2),
-    rgba($yellow, $opacity)   calc(100% / 6 * 3),
+    rgba($orange, $opacity) calc(100% / 6), 
+    rgba($orange, $opacity) calc(100% / 6 * 2),
+    rgba($yellow, $opacity) calc(100% / 6 * 2),
+    rgba($yellow, $opacity) calc(100% / 6 * 3),
     rgba($green, $opacity) calc(100% / 6 * 3),
     rgba($green, $opacity) calc(100% / 6 * 4),
-    rgba($blue, $opacity)  calc(100% / 6 * 4),
+    rgba($blue, $opacity) calc(100% / 6 * 4),
     rgba($blue, $opacity) calc(100% / 6 * 5),
     rgba($purple, $opacity) calc(100% / 6 * 5),
     rgba($purple, $opacity) 100%
@@ -27,4 +27,22 @@
 
 .rainbow {
   background: gaydient-rainbow();
+}
+
+@function gaydient-trans($blue: #55CDFC, $pink: #F7A8B8, $white: white, $opacity: 1) {
+  @return linear-gradient(to right,   
+    rgba($blue, $opacity) calc(100% / 5), 
+    rgba($pink, $opacity) calc(100% / 5), 
+    rgba($pink, $opacity) calc(100% / 5 * 2),
+    rgba($white, $opacity) calc(100% / 5 * 2),
+    rgba($white, $opacity) calc(100% / 5 * 3),
+    rgba($pink, $opacity) calc(100% / 5 * 3),
+    rgba($pink, $opacity) calc(100% / 5 * 4),
+    rgba($blue, $opacity) calc(100% / 5 * 4),
+    rgba($blue, $opacity) 100%
+  );
+}
+
+.trans {
+  background: gaydient-trans();
 }
