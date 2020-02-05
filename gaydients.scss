@@ -9,10 +9,10 @@
   }
 }
 
-@function gaydient-rainbow($red: red, $orange: orange, $yellow: yellow, $green: green, $blue: blue, $purple: purple, $opacity: 1) {
+@function gaydient-rainbow($red: red, $orange: orange, $yellow: yellow, $green: green, $blue: blue, $purple: purple, $opacity: 1, $degrees: 90deg) {
   $sections: 6;
   
-  @return linear-gradient(to right,
+  @return linear-gradient($degrees,
     rgba($red, $opacity) #{100% / $sections}, 
     rgba($orange, $opacity) #{100% / $sections}, 
     rgba($orange, $opacity) #{100% / $sections * 2},
@@ -31,10 +31,10 @@
   background: gaydient-rainbow();
 }
 
-@function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1) {
+@function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1, $degrees: 90deg) {
   $sections: 5;
   
-  @return linear-gradient(to right,   
+  @return linear-gradient($degrees,   
     rgba($blue, $opacity) #{100% / $sections}, 
     rgba($pink, $opacity) #{100% / $sections}, 
     rgba($pink, $opacity) #{100% / $sections * 2},
@@ -51,10 +51,10 @@
   background: gaydient-trans();
 }
 
-@function gaydient-enby($yellow: #fff433, $white: #fff, $purple: #9b59d0, $black: #000, $opacity: 1) {
+@function gaydient-enby($yellow: #fff433, $white: #fff, $purple: #9b59d0, $black: #000, $opacity: 1, $degrees: 90deg) {
   $sections: 4;
   
-  @return linear-gradient(to right,   
+  @return linear-gradient($degrees,   
     rgba($yellow, $opacity) #{100% / $sections}, 
     rgba($white, $opacity) #{100% / $sections}, 
     rgba($white, $opacity) #{100% / $sections * 2},
@@ -69,10 +69,10 @@
   background: gaydient-enby();
 }
 
-@function gaydient-genderqueer($lavender: #b77fdd, $white: #fff, $green: #48821e, $opacity: 1) {
+@function gaydient-genderqueer($lavender: #b77fdd, $white: #fff, $green: #48821e, $opacity: 1, $degrees: 90deg) {
   $sections: 3;
   
-  @return linear-gradient(to right,   
+  @return linear-gradient($degrees,   
     rgba($lavender, $opacity) #{100% / $sections}, 
     rgba($white, $opacity) #{100% / $sections}, 
     rgba($white, $opacity) #{100% / $sections * 2},
@@ -85,10 +85,10 @@
   background: gaydient-genderqueer();
 }
 
-@function gaydient-ace($black: #000, $grey: #a4a4a4, $white: #fff, $purple: #810081, $opacity: 1) {
+@function gaydient-ace($black: #000, $grey: #a4a4a4, $white: #fff, $purple: #810081, $opacity: 1, $degrees: 90deg) {
   $sections: 4;
   
-  @return linear-gradient(to right,   
+  @return linear-gradient($degrees,   
     rgba($black, $opacity) #{100% / $sections}, 
     rgba($grey, $opacity) #{100% / $sections}, 
     rgba($grey, $opacity) #{100% / $sections * 2},
