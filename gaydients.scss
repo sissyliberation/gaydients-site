@@ -84,3 +84,21 @@
 .genderqueer {
   background: gaydient-genderqueer();
 }
+
+@function gaydient-ace($black: #000, $grey: #a4a4a4, $white: #fff, $purple: #810081, $opacity: 1) {
+  $sections: 4;
+  
+  @return linear-gradient(to right,   
+    rgba($black, $opacity) #{100% / $sections}, 
+    rgba($grey, $opacity) #{100% / $sections}, 
+    rgba($grey, $opacity) #{100% / $sections * 2},
+    rgba($white, $opacity) #{100% / $sections * 2},
+    rgba($white, $opacity) #{100% / $sections * 3},
+    rgba($purple, $opacity) #{100% / $sections * 3},
+    rgba($purple, $opacity) 100%
+  );
+}
+
+.ace {
+  background: gaydient-ace();
+}
