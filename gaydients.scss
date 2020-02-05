@@ -31,7 +31,7 @@
   background: gaydient-rainbow();
 }
 
-@function gaydient-trans($blue: #55CDFC, $pink: #F7A8B8, $white: white, $opacity: 1) {
+@function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1) {
   $sections: 5;
   
   @return linear-gradient(to right,   
@@ -49,4 +49,22 @@
 
 .trans {
   background: gaydient-trans();
+}
+
+@function gaydient-enby($yellow: #fff433, $white: #fff, $purple: #9b59d0, $black: #000, $opacity: 1) {
+  $sections: 4;
+  
+  @return linear-gradient(to right,   
+    rgba($yellow, $opacity) #{100% / $sections}, 
+    rgba($white, $opacity) #{100% / $sections}, 
+    rgba($white, $opacity) #{100% / $sections * 2},
+    rgba($purple, $opacity) #{100% / $sections * 2},
+    rgba($purple, $opacity) #{100% / $sections * 3},
+    rgba($black, $opacity) #{100% / $sections * 3},
+    rgba($black, $opacity) 100%
+  );
+}
+
+.enby {
+  background: gaydient-enby();
 }
