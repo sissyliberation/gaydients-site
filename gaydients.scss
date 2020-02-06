@@ -3,7 +3,7 @@
   $solidWidth: 100 / $sections * $chunk;
   $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
-  @return linear-gradient($degrees,   
+  @return linear-gradient($degrees,
     rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
     rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
     rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) 100%
@@ -15,7 +15,7 @@
   $solidWidth: 100 / $sections * $chunk;
   $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
-  @return linear-gradient($degrees,   
+  @return linear-gradient($degrees,
     rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
     rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
     rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
@@ -28,7 +28,7 @@
   $solidWidth: 100 / $sections * $chunk;
   $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
-  @return linear-gradient($degrees,   
+  @return linear-gradient($degrees,
     rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
     rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
     rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
@@ -42,7 +42,7 @@
   $solidWidth: 100 / $sections * $chunk;
   $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
-  @return linear-gradient($degrees,   
+  @return linear-gradient($degrees,
     rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
     rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
     rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
@@ -80,6 +80,12 @@
   $colors: $black, $grey, $white, $purple;
 
   @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
+}
+
+@function gaydient-pansexual($pink: #ff1b8d, $yellow: #ffda00, $blue: #1bb3ff, $opacity: 1, $degrees: 180deg, $chunk: 1) {
+  $colors: $pink, $yellow, $blue;
+
+  @return gaydient-three-colors($colors, $opacity, $degrees, $chunk);
 }
 
 * {
@@ -182,4 +188,16 @@ body {
 
 .ace-chunky-gradient {
   background: gaydient-ace($chunk: .5);
+}
+
+.pansexual {
+  background: gaydient-pansexual();
+}
+
+.pansexual-gradient {
+  background: gaydient-pansexual($chunk: 0);
+}
+
+.pansexual-chunky-gradient {
+  background: gaydient-pansexual($chunk: .5);
 }
