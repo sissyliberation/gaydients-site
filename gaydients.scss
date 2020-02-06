@@ -52,31 +52,31 @@
   );
 }
 
-@function gaydient-rainbow($red: #ff0018, $orange: #ffa52c, $yellow: #ffff41, $green: #008018, $blue: #0000f9, $purple: #86007d, $opacity: 1, $degrees: 90deg, $chunk: 1) {
+@function gaydient-rainbow($red: #ff0018, $orange: #ffa52c, $yellow: #ffff41, $green: #008018, $blue: #0000f9, $purple: #86007d, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $red, $orange, $yellow, $green, $blue, $purple;
   
   @return gaydient-six-colors($colors, $opacity, $degrees, $chunk);
 }
 
-@function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1, $degrees: 90deg, $chunk: 1) {
+@function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $blue, $pink, $white, $pink, $blue;
 
   @return gaydient-five-colors($colors, $opacity, $degrees, $chunk);
 }
 
-@function gaydient-enby($yellow: #fff433, $white: #fff, $purple: #9b59d0, $black: #000, $opacity: 1, $degrees: 90deg, $chunk: 1) {
+@function gaydient-enby($yellow: #fff433, $white: #fff, $purple: #9b59d0, $black: #000, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $yellow, $white, $purple, $black;
 
   @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
 }
 
-@function gaydient-genderqueer($lavender: #b77fdd, $white: #fff, $green: #48821e, $opacity: 1, $degrees: 90deg, $chunk: 1) {
+@function gaydient-genderqueer($lavender: #b77fdd, $white: #fff, $green: #48821e, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $lavender, $white, $green;
   
   @return gaydient-three-colors($colors, $opacity, $degrees, $chunk);
 }
 
-@function gaydient-ace($black: #000, $grey: #a4a4a4, $white: #fff, $purple: #810081, $opacity: 1, $degrees: 90deg, $chunk: 1) {
+@function gaydient-ace($black: #000, $grey: #a4a4a4, $white: #fff, $purple: #810081, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $black, $grey, $white, $purple;
 
   @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
@@ -108,11 +108,20 @@ body {
   box-shadow: 0 8px 16px rgba(35, 20, 29, .2);
   border-radius: 6px;
   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-family: monospace;
+  letter-spacing: 3px;
+  color: rgba(35, 20, 29, 1);
+  
   &:after {
     content: "";
     display: block;
     padding-bottom: 60%;
   }
+  
 }
 
 .rainbow {
