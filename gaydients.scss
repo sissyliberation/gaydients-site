@@ -1,30 +1,35 @@
+.boxes {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 32px;
+}
+
 .box {
+  position: relative;
   width: 100%;
-  height: 140px;
   box-shadow: 0 8px 16px rgba(35, 20, 29, .2);
   border-radius: 6px;
+  height: 100px;
   
-  &:not(:first-child) {
-    margin-top: 32px;
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
   }
 }
 
-@function gaydient-rainbow($red: red, $orange: orange, $yellow: yellow, $green: green, $blue: blue, $purple: purple, $opacity: 1, $degrees: 90deg, $solid: true) {
+@function gaydient-rainbow($red: #ff0018, $orange: #ffa52c, $yellow: #ffff41, $green: #008018, $blue: #0000f9, $purple: #86007d, $opacity: 1, $degrees: 90deg, $solid: true) {
   $sections: 6;
   
   @if ($solid) {
     @return linear-gradient($degrees,
-      rgba($red, $opacity) #{100% / $sections}, 
-      rgba($orange, $opacity) #{100% / $sections}, 
-      rgba($orange, $opacity) #{100% / $sections * 2},
-      rgba($yellow, $opacity) #{100% / $sections * 2},
-      rgba($yellow, $opacity) #{100% / $sections * 3},
-      rgba($green, $opacity) #{100% / $sections * 3},
-      rgba($green, $opacity) #{100% / $sections * 4},
-      rgba($blue, $opacity) #{100% / $sections * 4},
-      rgba($blue, $opacity) #{100% / $sections * 5},
-      rgba($purple, $opacity) #{100% / $sections * 5},
-      rgba($purple, $opacity) 100%
+      rgba($red, $opacity) 0 #{100% / $sections}, 
+      rgba($orange, $opacity) #{100% / $sections} #{100% / $sections * 2},
+      rgba($yellow, $opacity) #{100% / $sections * 2} #{100% / $sections * 3},
+      rgba($green, $opacity) #{100% / $sections * 3} #{100% / $sections * 4},
+      rgba($blue, $opacity) #{100% / $sections * 4} #{100% / $sections * 5},
+      rgba($purple, $opacity) #{100% / $sections * 5} 100%
     );
   }
 
@@ -52,19 +57,15 @@
   
   @if($solid) {
     @return linear-gradient($degrees,   
-      rgba($blue, $opacity) #{100% / $sections}, 
-      rgba($pink, $opacity) #{100% / $sections}, 
-      rgba($pink, $opacity) #{100% / $sections * 2},
-      rgba($white, $opacity) #{100% / $sections * 2},
-      rgba($white, $opacity) #{100% / $sections * 3},
-      rgba($pink, $opacity) #{100% / $sections * 3},
-      rgba($pink, $opacity) #{100% / $sections * 4},
-      rgba($blue, $opacity) #{100% / $sections * 4},
-      rgba($blue, $opacity) 100%
-    );  
+      rgba($blue, $opacity) 0 #{100% / $sections},
+      rgba($pink, $opacity) #{100% / $sections} #{100% / $sections * 2},
+      rgba($white, $opacity) #{100% / $sections * 2} #{100% / $sections * 3},
+      rgba($pink, $opacity) #{100% / $sections * 3} #{100% / $sections * 4},
+      rgba($blue, $opacity) #{100% / $sections * 4} 100%
+    );
   }
 
-  @return linear-gradient($degrees,   
+  @return linear-gradient($degrees,  
     rgba($blue, $opacity),
     rgba($pink, $opacity),
     rgba($white, $opacity),
@@ -86,13 +87,10 @@
   
   @if($solid) {
     @return linear-gradient($degrees,   
-      rgba($yellow, $opacity) #{100% / $sections}, 
-      rgba($white, $opacity) #{100% / $sections}, 
-      rgba($white, $opacity) #{100% / $sections * 2},
-      rgba($purple, $opacity) #{100% / $sections * 2},
-      rgba($purple, $opacity) #{100% / $sections * 3},
-      rgba($black, $opacity) #{100% / $sections * 3},
-      rgba($black, $opacity) 100%
+      rgba($yellow, $opacity) 0 #{100% / $sections}, 
+      rgba($white, $opacity) #{100% / $sections} #{100% / $sections * 2},
+      rgba($purple, $opacity) #{100% / $sections * 2} #{100% / $sections * 3},
+      rgba($black, $opacity) #{100% / $sections * 3} 100%
     );
   }
 
@@ -117,11 +115,9 @@
   
   @if($solid) {
     @return linear-gradient($degrees,   
-      rgba($lavender, $opacity) #{100% / $sections}, 
-      rgba($white, $opacity) #{100% / $sections}, 
-      rgba($white, $opacity) #{100% / $sections * 2},
-      rgba($green, $opacity) #{100% / $sections * 2},
-      rgba($green, $opacity) 100%
+      rgba($lavender, $opacity) 0 #{100% / $sections}, 
+      rgba($white, $opacity) #{100% / $sections} #{100% / $sections * 2},
+      rgba($green, $opacity) #{100% / $sections * 2} 100%
     );
   }
 
@@ -145,13 +141,10 @@
   
   @if($solid) {
     @return linear-gradient($degrees,   
-      rgba($black, $opacity) #{100% / $sections}, 
-      rgba($grey, $opacity) #{100% / $sections}, 
-      rgba($grey, $opacity) #{100% / $sections * 2},
-      rgba($white, $opacity) #{100% / $sections * 2},
-      rgba($white, $opacity) #{100% / $sections * 3},
-      rgba($purple, $opacity) #{100% / $sections * 3},
-      rgba($purple, $opacity) 100%
+      rgba($black, $opacity) 0 #{100% / $sections}, 
+      rgba($grey, $opacity) #{100% / $sections} #{100% / $sections * 2},
+      rgba($white, $opacity) #{100% / $sections * 2} #{100% / $sections * 3},
+      rgba($purple, $opacity) #{100% / $sections * 3} 100%
     );
   }
 
