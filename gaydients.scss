@@ -4,9 +4,9 @@
   $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
   @return linear-gradient($degrees,   
-    rgba(nth($colors, 1), $opacity) 0 #{$solidWidth * 1%},
-    rgba(nth($colors, 2), $opacity) #{($solidWidth + $gradientWidth) * 1%} #{($solidWidth * 2 + $gradientWidth) * 1%},
-    rgba(nth($colors, 3), $opacity) #{($solidWidth * 2 + $gradientWidth * 2) * 1%} 100%
+    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
+    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
+    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) 100%
   );
 }
 
@@ -16,10 +16,10 @@
   $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
   @return linear-gradient($degrees,   
-    rgba(nth($colors, 1), $opacity) 0 #{$solidWidth * 1%},
-    rgba(nth($colors, 2), $opacity) #{($solidWidth + $gradientWidth) * 1%} #{($solidWidth * 2 + $gradientWidth) * 1%},
-    rgba(nth($colors, 3), $opacity) #{($solidWidth * 2 + $gradientWidth * 2) * 1%} #{($solidWidth * 3 + $gradientWidth * 2) * 1%},
-    rgba(nth($colors, 4), $opacity) #{($solidWidth * 3 + $gradientWidth * 3) * 1%} 100%
+    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
+    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
+    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
+    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) 100%
   );
 }
 
@@ -29,11 +29,11 @@
   $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
   @return linear-gradient($degrees,   
-    rgba(nth($colors, 1), $opacity) 0 #{$solidWidth * 1%},
-    rgba(nth($colors, 2), $opacity) #{($solidWidth + $gradientWidth) * 1%} #{($solidWidth * 2 + $gradientWidth) * 1%},
-    rgba(nth($colors, 3), $opacity) #{($solidWidth * 2 + $gradientWidth * 2) * 1%} #{($solidWidth * 3 + $gradientWidth * 2) * 1%},
-    rgba(nth($colors, 4), $opacity) #{($solidWidth * 3 + $gradientWidth * 3) * 1%} #{($solidWidth * 4 + $gradientWidth * 3) * 1%},
-    rgba(nth($colors, 5), $opacity) #{($solidWidth * 4 + $gradientWidth * 4) * 1%} 100%
+    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
+    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
+    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
+    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) percentage(($solidWidth * 4 + $gradientWidth * 3) / 100),
+    rgba(nth($colors, 5), $opacity) percentage(($solidWidth * 4 + $gradientWidth * 4) / 100) 100%
   );
 }
 
@@ -43,12 +43,12 @@
   $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
   @return linear-gradient($degrees,   
-    rgba(nth($colors, 1), $opacity) 0 #{$solidWidth * 1%},
-    rgba(nth($colors, 2), $opacity) #{($solidWidth + $gradientWidth) * 1%} #{($solidWidth * 2 + $gradientWidth) * 1%},
-    rgba(nth($colors, 3), $opacity) #{($solidWidth * 2 + $gradientWidth * 2) * 1%} #{($solidWidth * 3 + $gradientWidth * 2) * 1%},
-    rgba(nth($colors, 4), $opacity) #{($solidWidth * 3 + $gradientWidth * 3) * 1%} #{($solidWidth * 4 + $gradientWidth * 3) * 1%},
-    rgba(nth($colors, 5), $opacity) #{($solidWidth * 4 + $gradientWidth * 4) * 1%} #{($solidWidth * 5 + $gradientWidth * 4) * 1%},
-    rgba(nth($colors, 6), $opacity) #{($solidWidth * 5 + $gradientWidth * 5) * 1%} 100%
+    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
+    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
+    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
+    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) percentage(($solidWidth * 4 + $gradientWidth * 3) / 100),
+    rgba(nth($colors, 5), $opacity) percentage(($solidWidth * 4 + $gradientWidth * 4) / 100) percentage(($solidWidth * 5 + $gradientWidth * 4) / 100),
+    rgba(nth($colors, 6), $opacity) percentage(($solidWidth * 5 + $gradientWidth * 5) / 100) 100%
   );
 }
 
@@ -80,6 +80,19 @@
   $colors: $black, $grey, $white, $purple;
 
   @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 32px;
+}
+
+body {
+  margin: 0;
 }
 
 .boxes {
