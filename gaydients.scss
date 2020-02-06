@@ -1,7 +1,7 @@
 .boxes {
   display: grid;
   grid-auto-rows: 1fr;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 32px;
 }
 
@@ -10,12 +10,11 @@
   width: 100%;
   box-shadow: 0 8px 16px rgba(35, 20, 29, .2);
   border-radius: 6px;
-  height: 100px;
   
   &:after {
     content: "";
     display: block;
-    padding-bottom: 100%;
+    padding-bottom: 60%;
   }
 }
 
@@ -52,25 +51,17 @@
   background: gaydient-rainbow($solid:false);
 }
 
-@function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1, $degrees: 90deg, $solid: true) {
+@function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1, $degrees: 90deg, $chunk: 1) {
   $sections: 5;
-  
-  @if($solid) {
-    @return linear-gradient($degrees,   
-      rgba($blue, $opacity) 0 #{100% / $sections},
-      rgba($pink, $opacity) #{100% / $sections} #{100% / $sections * 2},
-      rgba($white, $opacity) #{100% / $sections * 2} #{100% / $sections * 3},
-      rgba($pink, $opacity) #{100% / $sections * 3} #{100% / $sections * 4},
-      rgba($blue, $opacity) #{100% / $sections * 4} 100%
-    );
-  }
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
-  @return linear-gradient($degrees,  
-    rgba($blue, $opacity),
-    rgba($pink, $opacity),
-    rgba($white, $opacity),
-    rgba($pink, $opacity),
-    rgba($blue, $opacity)
+  @return linear-gradient($degrees,   
+    rgba($blue, $opacity) 0 #{$solidWidth * 1%},
+    rgba($pink, $opacity) #{($solidWidth + $gradientWidth) * 1%} #{($solidWidth * 2 + $gradientWidth) * 1%},
+    rgba($white, $opacity) #{($solidWidth * 2 + $gradientWidth * 2) * 1%} #{($solidWidth * 3 + $gradientWidth * 2) * 1%},
+    rgba($pink, $opacity) #{($solidWidth * 3 + $gradientWidth * 3) * 1%} #{($solidWidth * 4 + $gradientWidth * 3) * 1%},
+    rgba($blue, $opacity) #{($solidWidth * 4 + $gradientWidth * 4) * 1%} 100%
   );
 }
 
@@ -79,7 +70,11 @@
 }
 
 .trans-gradient {
-  background: gaydient-trans($solid: false);
+  background: gaydient-trans($chunk: 0);
+}
+
+.trans-chunky-gradient {
+  background: gaydient-trans($chunk: .5);
 }
 
 @function gaydient-enby($yellow: #fff433, $white: #fff, $purple: #9b59d0, $black: #000, $opacity: 1, $degrees: 90deg, $solid: true) {
