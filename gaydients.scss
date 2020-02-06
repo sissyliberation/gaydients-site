@@ -18,28 +18,18 @@
   }
 }
 
-@function gaydient-rainbow($red: #ff0018, $orange: #ffa52c, $yellow: #ffff41, $green: #008018, $blue: #0000f9, $purple: #86007d, $opacity: 1, $degrees: 90deg, $solid: true) {
+@function gaydient-rainbow($red: #ff0018, $orange: #ffa52c, $yellow: #ffff41, $green: #008018, $blue: #0000f9, $purple: #86007d, $opacity: 1, $degrees: 90deg, $chunk: 1) {
   $sections: 6;
-  
-  @if ($solid) {
-    @return linear-gradient($degrees,
-      rgba($red, $opacity) 0 #{100% / $sections}, 
-      rgba($orange, $opacity) #{100% / $sections} #{100% / $sections * 2},
-      rgba($yellow, $opacity) #{100% / $sections * 2} #{100% / $sections * 3},
-      rgba($green, $opacity) #{100% / $sections * 3} #{100% / $sections * 4},
-      rgba($blue, $opacity) #{100% / $sections * 4} #{100% / $sections * 5},
-      rgba($purple, $opacity) #{100% / $sections * 5} 100%
-    );
-  }
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
-  @return linear-gradient($degrees,
-    rgba($red, $opacity), 
-    rgba($orange, $opacity), 
-    rgba($yellow, $opacity),
-    rgba($yellow, $opacity),
-    rgba($green, $opacity),
-    rgba($blue, $opacity),
-    rgba($purple, $opacity)
+  @return linear-gradient($degrees,   
+    rgba($red, $opacity) 0 #{$solidWidth * 1%},
+    rgba($orange, $opacity) #{($solidWidth + $gradientWidth) * 1%} #{($solidWidth * 2 + $gradientWidth) * 1%},
+    rgba($yellow, $opacity) #{($solidWidth * 2 + $gradientWidth * 2) * 1%} #{($solidWidth * 3 + $gradientWidth * 2) * 1%},
+    rgba($green, $opacity) #{($solidWidth * 3 + $gradientWidth * 3) * 1%} #{($solidWidth * 4 + $gradientWidth * 3) * 1%},
+    rgba($blue, $opacity) #{($solidWidth * 4 + $gradientWidth * 4) * 1%} #{($solidWidth * 5 + $gradientWidth * 4) * 1%},
+    rgba($purple, $opacity) #{($solidWidth * 5 + $gradientWidth * 5) * 1%} 100%
   );
 }
 
@@ -48,7 +38,11 @@
 }
 
 .rainbow-gradient {
-  background: gaydient-rainbow($solid:false);
+  background: gaydient-rainbow($chunk: 0);
+}
+
+.rainbow-chunky-gradient {
+  background: gaydient-rainbow($chunk: .5);
 }
 
 @function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1, $degrees: 90deg, $chunk: 1) {
@@ -77,23 +71,16 @@
   background: gaydient-trans($chunk: .5);
 }
 
-@function gaydient-enby($yellow: #fff433, $white: #fff, $purple: #9b59d0, $black: #000, $opacity: 1, $degrees: 90deg, $solid: true) {
+@function gaydient-enby($yellow: #fff433, $white: #fff, $purple: #9b59d0, $black: #000, $opacity: 1, $degrees: 90deg, $chunk: 1) {
   $sections: 4;
-  
-  @if($solid) {
-    @return linear-gradient($degrees,   
-      rgba($yellow, $opacity) 0 #{100% / $sections}, 
-      rgba($white, $opacity) #{100% / $sections} #{100% / $sections * 2},
-      rgba($purple, $opacity) #{100% / $sections * 2} #{100% / $sections * 3},
-      rgba($black, $opacity) #{100% / $sections * 3} 100%
-    );
-  }
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
   @return linear-gradient($degrees,   
-    rgba($yellow, $opacity),
-    rgba($white, $opacity),
-    rgba($purple, $opacity),
-    rgba($black, $opacity)
+    rgba($yellow, $opacity) 0 #{$solidWidth * 1%},
+    rgba($white, $opacity) #{($solidWidth + $gradientWidth) * 1%} #{($solidWidth * 2 + $gradientWidth) * 1%},
+    rgba($purple, $opacity) #{($solidWidth * 2 + $gradientWidth * 2) * 1%} #{($solidWidth * 3 + $gradientWidth * 2) * 1%},
+    rgba($black, $opacity) #{($solidWidth * 3 + $gradientWidth * 3) * 1%} 100%
   );
 }
 
@@ -102,24 +89,22 @@
 }
 
 .enby-gradient {
-  background: gaydient-enby($solid: false);
+  background: gaydient-enby($chunk: 0);
 }
 
-@function gaydient-genderqueer($lavender: #b77fdd, $white: #fff, $green: #48821e, $opacity: 1, $degrees: 90deg, $solid: true) {
+.enby-chunky-gradient {
+  background: gaydient-enby($chunk: .5);
+}
+
+@function gaydient-genderqueer($lavender: #b77fdd, $white: #fff, $green: #48821e, $opacity: 1, $degrees: 90deg, $chunk: 1) {
   $sections: 3;
-  
-  @if($solid) {
-    @return linear-gradient($degrees,   
-      rgba($lavender, $opacity) 0 #{100% / $sections}, 
-      rgba($white, $opacity) #{100% / $sections} #{100% / $sections * 2},
-      rgba($green, $opacity) #{100% / $sections * 2} 100%
-    );
-  }
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
   @return linear-gradient($degrees,   
-    rgba($lavender, $opacity),
-    rgba($white, $opacity),
-    rgba($green, $opacity)
+    rgba($lavender, $opacity) 0 #{$solidWidth * 1%},
+    rgba($white, $opacity) #{($solidWidth + $gradientWidth) * 1%} #{($solidWidth * 2 + $gradientWidth) * 1%},
+    rgba($green, $opacity) #{($solidWidth * 2 + $gradientWidth * 2) * 1%} 100%
   );
 }
 
@@ -128,26 +113,23 @@
 }
 
 .genderqueer-gradient {
-  background: gaydient-genderqueer($solid: false);
+  background: gaydient-genderqueer($chunk: 0);
 }
 
-@function gaydient-ace($black: #000, $grey: #a4a4a4, $white: #fff, $purple: #810081, $opacity: 1, $degrees: 90deg, $solid: true) {
+.genderqueer-chunky-gradient {
+  background: gaydient-genderqueer($chunk: .5);
+}
+
+@function gaydient-ace($black: #000, $grey: #a4a4a4, $white: #fff, $purple: #810081, $opacity: 1, $degrees: 90deg, $chunk: 1) {
   $sections: 4;
-  
-  @if($solid) {
-    @return linear-gradient($degrees,   
-      rgba($black, $opacity) 0 #{100% / $sections}, 
-      rgba($grey, $opacity) #{100% / $sections} #{100% / $sections * 2},
-      rgba($white, $opacity) #{100% / $sections * 2} #{100% / $sections * 3},
-      rgba($purple, $opacity) #{100% / $sections * 3} 100%
-    );
-  }
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
 
   @return linear-gradient($degrees,   
-    rgba($black, $opacity),
-    rgba($grey, $opacity),
-    rgba($white, $opacity),
-    rgba($purple, $opacity)
+    rgba($black, $opacity) 0 #{$solidWidth * 1%},
+    rgba($grey, $opacity) #{($solidWidth + $gradientWidth) * 1%} #{($solidWidth * 2 + $gradientWidth) * 1%},
+    rgba($white, $opacity) #{($solidWidth * 2 + $gradientWidth * 2) * 1%} #{($solidWidth * 3 + $gradientWidth * 2) * 1%},
+    rgba($purple, $opacity) #{($solidWidth * 3 + $gradientWidth * 3) * 1%} 100%
   );
 }
 
@@ -156,5 +138,9 @@
 }
 
 .ace-gradient {
-  background: gaydient-ace($solid: false);
+  background: gaydient-ace($chunk: 0);
+}
+
+.ace-chunky-gradient {
+  background: gaydient-ace($chunk: .5);
 }
