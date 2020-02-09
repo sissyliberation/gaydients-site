@@ -1,0 +1,280 @@
+@function gaydient-two-colors($colors, $opacity, $degrees, $chunk) {
+  $sections: 2;
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
+
+  @return linear-gradient($degrees,
+    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
+    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100)
+  );
+}
+
+@function gaydient-three-colors($colors, $opacity, $degrees, $chunk) {
+  $sections: 3;
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
+
+  @return linear-gradient($degrees,
+    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
+    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
+    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) 100%
+  );
+}
+
+@function gaydient-four-colors($colors, $opacity, $degrees, $chunk) {
+  $sections: 4;
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
+
+  @return linear-gradient($degrees,
+    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
+    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
+    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
+    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) 100%
+  );
+}
+
+@function gaydient-five-colors($colors, $opacity, $degrees, $chunk) {
+  $sections: 5;
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
+
+  @return linear-gradient($degrees,
+    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
+    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
+    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
+    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) percentage(($solidWidth * 4 + $gradientWidth * 3) / 100),
+    rgba(nth($colors, 5), $opacity) percentage(($solidWidth * 4 + $gradientWidth * 4) / 100) 100%
+  );
+}
+
+@function gaydient-six-colors($colors, $opacity, $degrees, $chunk) {
+  $sections: 6;
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
+
+  @return linear-gradient($degrees,
+    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
+    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
+    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
+    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) percentage(($solidWidth * 4 + $gradientWidth * 3) / 100),
+    rgba(nth($colors, 5), $opacity) percentage(($solidWidth * 4 + $gradientWidth * 4) / 100) percentage(($solidWidth * 5 + $gradientWidth * 4) / 100),
+    rgba(nth($colors, 6), $opacity) percentage(($solidWidth * 5 + $gradientWidth * 5) / 100) 100%
+  );
+}
+
+@function gaydient-rainbow($red: #ff0018, $orange: #ffa52c, $yellow: #ffff41, $green: #008018, $blue: #0000f9, $purple: #86007d, $opacity: 1, $degrees: 180deg, $chunk: 1) {
+  $colors: $red, $orange, $yellow, $green, $blue, $purple;
+
+  @return gaydient-six-colors($colors, $opacity, $degrees, $chunk);
+}
+
+@function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1, $degrees: 180deg, $chunk: 1) {
+  $colors: $blue, $pink, $white, $pink, $blue;
+
+  @return gaydient-five-colors($colors, $opacity, $degrees, $chunk);
+}
+
+@function gaydient-enby($yellow: #fff433, $white: #fff, $purple: #9b59d0, $black: #000, $opacity: 1, $degrees: 180deg, $chunk: 1) {
+  $colors: $yellow, $white, $purple, $black;
+
+  @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
+}
+
+@function gaydient-genderqueer($lavender: #b77fdd, $white: #fff, $green: #48821e, $opacity: 1, $degrees: 180deg, $chunk: 1) {
+  $colors: $lavender, $white, $green;
+
+  @return gaydient-three-colors($colors, $opacity, $degrees, $chunk);
+}
+
+@function gaydient-ace($black: #000, $grey: #a4a4a4, $white: #fff, $purple: #810081, $opacity: 1, $degrees: 180deg, $chunk: 1) {
+  $colors: $black, $grey, $white, $purple;
+
+  @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
+}
+
+@function gaydient-pansexual($pink: #ff1b8d, $yellow: #ffda00, $blue: #1bb3ff, $opacity: 1, $degrees: 180deg, $chunk: 1) {
+  $colors: $pink, $yellow, $blue;
+
+  @return gaydient-three-colors($colors, $opacity, $degrees, $chunk);
+}
+
+@function gaydient-aro($green: #3aa63f, $lightgreen: #a8d47a, $white: #ffffff, $grey: #aaaaaa, $black: #000000, $opacity: 1, $degrees: 180deg, $chunk: 1) {
+  $colors: $green, $lightgreen, $white, $grey, $black;
+
+  @return gaydient-five-colors($colors, $opacity, $degrees, $chunk);
+}
+
+@function gaydient-agender($black: #000000, $grey: #bababa, $white: #ffffff, $green: #baf584, $opacity: 1, $degrees: 180deg, $chunk: 1) {
+  $colors: $black, $grey, $white, $green;
+
+  @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
+}
+
+@function gaydient-demisexual($black: #000000, $white: #fff, $grey: #a4a4a4, $purple: #810081, $opacity: 1, $degrees: 180deg, $chunk: 1) {
+  $colors: $black, $white, $grey, $purple;
+
+  @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
+}
+
+@function gaydient-intersex($yellow: #ffda00, $purple: #7a00ac, $opacity: 1, $degrees: 180deg, $chunk: 1, $flag: true) {
+  $colors: $yellow, $purple;
+
+  @if($flag) {
+    @return radial-gradient(circle,
+      rgba($yellow, $opacity) 0 25%,
+      rgba($purple, $opacity) 25% percentage(1 / 3),
+      rgba($yellow, $opacity) percentage(1 / 3) 100%,
+    );
+  }
+
+  @return gaydient-two-colors($colors, $opacity, $degrees, $chunk);
+}
+
+.rainbow {
+  background: gaydient-rainbow();
+}
+
+.rainbow-gradient {
+  background: gaydient-rainbow($chunk: 0);
+}
+
+.rainbow-chunky-gradient {
+  background: gaydient-rainbow($chunk: .5);
+}
+
+.trans {
+  background: gaydient-trans();
+}
+
+.trans-gradient {
+  background: gaydient-trans($chunk: 0);
+}
+
+.trans-chunky-gradient {
+  background: gaydient-trans($chunk: .5);
+}
+
+.enby {
+  background: gaydient-enby();
+}
+
+.enby-gradient {
+  background: gaydient-enby($chunk: 0);
+}
+
+.enby-chunky-gradient {
+  background: gaydient-enby($chunk: .5);
+}
+
+.genderqueer {
+  background: gaydient-genderqueer();
+}
+
+.genderqueer-gradient {
+  background: gaydient-genderqueer($chunk: 0);
+}
+
+.genderqueer-chunky-gradient {
+  background: gaydient-genderqueer($chunk: .5);
+}
+
+.ace {
+  background: gaydient-ace();
+}
+
+.ace-gradient {
+  background: gaydient-ace($chunk: 0);
+}
+
+.ace-chunky-gradient {
+  background: gaydient-ace($chunk: .5);
+}
+
+.pansexual {
+  background: gaydient-pansexual();
+}
+
+.pansexual-gradient {
+  background: gaydient-pansexual($chunk: 0);
+}
+
+.pansexual-chunky-gradient {
+  background: gaydient-pansexual($chunk: .5);
+}
+
+.aro {
+  background: gaydient-aro();
+}
+
+.aro-gradient {
+  background: gaydient-aro($chunk: 0);
+}
+
+.aro-chunky-gradient {
+  background: gaydient-aro($chunk: .5);
+}
+
+.agender {
+  background: gaydient-agender();
+}
+
+.agender-gradient {
+  background: gaydient-agender($chunk: 0);
+}
+
+.agender-chunky-gradient {
+  background: gaydient-agender($chunk: .5);
+}
+
+.demisexual {
+  background: gaydient-demisexual();
+}
+
+.demisexual-gradient {
+  background: gaydient-demisexual($chunk: 0);
+}
+
+.demisexual-chunky-gradient {
+  background: gaydient-demisexual($chunk: .5);
+}
+
+.intersex {
+  background: gaydient-intersex($flag: false);
+}
+
+.intersex-gradient {
+  background: gaydient-intersex($flag: false, $chunk: 0);
+}
+
+.intersex-chunky-gradient {
+  background: gaydient-intersex($flag: false, $chunk: .5);
+}
+
+.intersex-flag {
+  background: gaydient-intersex();
+}
+
+$rainbow: gaydient-rainbow();
+$trans: gaydient-trans();
+$enby: gaydient-enby();
+$genderqueer: gaydient-genderqueer();
+$ace: gaydient-ace();
+$pansexual: gaydient-pansexual();
+$aro: gaydient-aro();
+$agender: gaydient-agender();
+$demisexual: gaydient-demisexual();
+$intersex: gaydient-intersex();
+
+:export {
+  rainbow: $rainbow;
+  trans: $trans;
+  enby: $enby;
+  genderqueer: $genderqueer;
+  ace: $ace;
+  pansexual: $pansexual;
+  aro: $aro;
+  agender: $agender;
+  demisexual: $demisexual;
+  intersex: $intersex;
+}

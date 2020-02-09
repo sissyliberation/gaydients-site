@@ -1,34 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 
 import CookieBanner from './components/cookie-banner';
 import Header from './components/header';
 import Footer from './components/footer';
+import Grid from './components/grid';
 
 function App() {
   return (
     <>
-
     <CookieBanner />
     <Header />
     <main id="main">
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+        <Grid />
+      </>
     </main>
     <Footer />
     </>
