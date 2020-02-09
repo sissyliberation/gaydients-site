@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-import logo from '../../logo.svg';
+import logo from '../../img/logo.svg';
 
 export default function Header(props) {
   return (
