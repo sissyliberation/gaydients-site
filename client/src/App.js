@@ -1,9 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+import CookieBanner from './components/cookie-banner';
+import Header from './components/header';
+import Footer from './components/footer';
 
 function App() {
   return (
+    <>
+
+    <CookieBanner />
+    <Header />
+    <main id="main">
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,6 +29,9 @@ function App() {
         </a>
       </header>
     </div>
+    </main>
+    <Footer />
+    </>
   );
 }
 
