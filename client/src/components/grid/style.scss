@@ -3,11 +3,19 @@
 .grid {
   padding-left: $space-big;
   padding-right: $space-big;
-  
+
   &__container {
     display: grid;
     grid-auto-rows: 1fr;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: $space-big;
+
+    @include screen-md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include screen-lg {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }

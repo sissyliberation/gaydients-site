@@ -1,12 +1,42 @@
+/* spacing defaults */
 $space: 1rem;
-
 $space-half: $space * .75;
 $space-tiny: $space / 2;
-
 $space-med: $space * 1.5;
 $space-big: $space * 2;
 $space-huge: $space * 3;
 
+/* breakpoint defaults */
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1224px;
+$screen-xxl: 1824px;
+
+@mixin screen-md {
+  @media (min-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (min-width: $screen-lg) {
+    @content;
+  }
+}
+
+@mixin screen-xl {
+  @media (min-width: $screen-xl) {
+    @content;
+  }
+}
+
+@mixin screen-xxl {
+  @media (min-width: $screen-xxl) {
+    @content;
+  }
+}
+
+/* transition defaults */
 $transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 $transition-duration: 275ms;
 
