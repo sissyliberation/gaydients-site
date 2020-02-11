@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.scss';
 
 import clipboard from '../../img/clipboard.svg';
@@ -7,14 +7,27 @@ export default function Card(props) {
   const backgroundStyle = {
     backgroundImage: props.value
   };
+
   const copyText = `background-image: ${props.value};`;
+
+  const [className, setClassName] = useState('card');
+
+  const handleCopy = (e, copyText) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(copyText);
+    setClassName('card card--with-bar');
+
+    setTimeout(() => {
+      setClassName('card');
+    }, 275);
+  };
 
   return (
     <>
-      <div class="card">
-        <div class="card__container">
-          <div class="card__content">
-            <a className="card__copy" href="" onClick={(e) => {e.preventDefault();navigator.clipboard.writeText(copyText)}}>
+      <div className={className}>
+        <div className="card__container">
+          <div className="card__content">
+            <a className="card__copy" href="" onClick={e => handleCopy(e, copyText)}>
               <img src={clipboard} className="card__clipboard" alt={`copy ${props.name} flag`} />
             </a>
             <div className="card__flag" style={backgroundStyle}></div>
@@ -23,6 +36,7 @@ export default function Card(props) {
             </div>
           </div>
         </div>
+        <div class="card__bar"></div>
       </div>
     </>
    );

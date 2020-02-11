@@ -1,10 +1,13 @@
 @import '../../variables';
 
 .grid {
+  padding-left: $space-big;
+  padding-right: $space-big;
+  
   &__container {
     display: grid;
     grid-auto-rows: 1fr;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: $space-double;
+    grid-gap: $space-big;
   }
 }
