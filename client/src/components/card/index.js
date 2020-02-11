@@ -27,9 +27,9 @@ export default function Card(props) {
       <div className={className}>
         <div className="card__container">
           <div className="card__content">
-            <a className="card__copy" href="" onClick={e => handleCopy(e, copyText)}>
+            <button className="card__copy" href="" onClick={e => handleCopy(e, copyText)}>
               <img src={clipboard} className="card__clipboard" alt={`copy ${props.name} flag`} />
-            </a>
+            </button>
             <div className="card__flag" style={backgroundStyle}></div>
             <div className="card__title">
               {props.name} flag

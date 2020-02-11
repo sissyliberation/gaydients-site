@@ -40,9 +40,12 @@
     position: absolute;
     top: 0;
     right: 0;
+    border: 0;
+    background-color: transparent;
     text-decoration: none;
     color: inherit;
     opacity: .7;
+    padding: 0;
     @include transition(opacity);
 
     &:hover,

@@ -21,7 +21,7 @@ export default function Grid(props) {
           {
             gaydientItems.map((item, i) => {
               return(
-                <Card name={item.name} value={item.value} />
+                <Card name={item.name} value={item.value} key={i} />
               )
             })
           }
