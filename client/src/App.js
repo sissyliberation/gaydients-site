@@ -9,14 +9,18 @@ import Grid from './components/grid';
 function App() {
   return (
     <>
-    <CookieBanner />
-    <Header />
+    {
+      // <CookieBanner />
+      // <Header />
+    }
     <main id="main">
       <>
         <Grid />
       </>
     </main>
-    <Footer />
+    {
+      // <Footer />
+    }
     </>
   );
 }
