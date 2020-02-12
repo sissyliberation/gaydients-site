@@ -164,8 +164,8 @@
   aro--gradient: gaydient-aro($chunk: 0);
   agender--flag: gaydient-agender();
   agender--gradient: gaydient-agender($chunk: 0);
-  demisexual--flag: gaydient-demisexual();
-  demisexual--gradient: gaydient-demisexual($chunk: 0);
+  // demisexual--flag: gaydient-demisexual();
+  // demisexual--gradient: gaydient-demisexual($chunk: 0);
   intersex--flag: gaydient-intersex();
   intersex--gradient: gaydient-intersex($flag: false, $chunk: 0);
 }
