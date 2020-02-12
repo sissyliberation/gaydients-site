@@ -11,7 +11,7 @@ app.use(express.static(__dirname));
 
 if (process.env.NODE_ENV === "production") {
   const prodPath = '/client/build/';
-  app.use(favicon(__dirname + `${prodPath}/logo.png`));
+  app.use(favicon(__dirname + `${prodPath}/favicon.ico`));
 
   app.use(express.static(path.join(__dirname, prodPath)));
   app.get('/*', function (req, res) {
