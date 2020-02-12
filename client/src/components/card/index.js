@@ -36,7 +36,7 @@ export default function Card(props) {
             </div>
           </div>
         </div>
-        <div class="card__bar"></div>
+        <div className="card__bar"></div>
       </div>
     </>
    );
