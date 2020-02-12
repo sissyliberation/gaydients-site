@@ -15,13 +15,11 @@ Object.keys(gaydients).forEach(key=>{
   let instance = {};
   instance[type] = value;
 
-  if (name in gaydientItems) {
-    gaydientItems[name].push(instance);
-  }
-  else {
+  if !((name in gaydientItems)) {
     gaydientItems[name] = [];
-    gaydientItems[name].push(instance);
   }
+  
+  gaydientItems[name].push(instance);
 });
 
 export default function Grid(props) {
