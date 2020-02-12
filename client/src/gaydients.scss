@@ -147,6 +147,12 @@
   @return gaydient-two-colors($colors, $opacity, $degrees, $chunk);
 }
 
+@function gaydient-bisexual($pink: #d60270, $purple: #9b4f96, $blue: #0038a8, $opacity: 1, $degrees: 180deg, $chunk: 1, $flag: true) {
+  $colors: $pink, $pink, $purple, $blue, $blue;
+
+  @return gaydient-five-colors($colors, $opacity, $degrees, $chunk);
+}
+
 :export {
   rainbow--flag: gaydient-rainbow();
   rainbow--gradient: gaydient-rainbow($chunk: 0);
@@ -168,4 +174,6 @@
   // demisexual--gradient: gaydient-demisexual($chunk: 0);
   intersex--flag: gaydient-intersex();
   intersex--gradient: gaydient-intersex($flag: false, $chunk: 0);
+  bisexual--flag: gaydient-bisexual();
+  bisexual--gradient: gaydient-bisexual($chunk: 0);
 }
