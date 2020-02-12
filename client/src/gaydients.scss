@@ -63,6 +63,22 @@
   );
 }
 
+@function gaydient-seven-colors($colors, $opacity, $degrees, $chunk) {
+  $sections: 7;
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
+
+  @return linear-gradient($degrees,
+    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
+    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
+    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
+    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) percentage(($solidWidth * 4 + $gradientWidth * 3) / 100),
+    rgba(nth($colors, 5), $opacity) percentage(($solidWidth * 4 + $gradientWidth * 4) / 100) percentage(($solidWidth * 5 + $gradientWidth * 4) / 100),
+    rgba(nth($colors, 6), $opacity) percentage(($solidWidth * 5 + $gradientWidth * 5) / 100) percentage(($solidWidth * 6 + $gradientWidth * 5) / 100),
+    rgba(nth($colors, 7), $opacity) percentage(($solidWidth * 6 + $gradientWidth * 5) / 100) 100%
+  );
+}
+
 @function gaydient-rainbow($red: #ff0018, $orange: #ffa52c, $yellow: #ffff41, $green: #008018, $blue: #0000f9, $purple: #86007d, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $red, $orange, $yellow, $green, $blue, $purple;
 
@@ -106,9 +122,9 @@
 }
 
 @function gaydient-agender($black: #000000, $grey: #bababa, $white: #ffffff, $green: #baf584, $opacity: 1, $degrees: 180deg, $chunk: 1) {
-  $colors: $black, $grey, $white, $green;
+  $colors: $black, $grey, $white, $green, $white, $grey, $black;
 
-  @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydient-seven-colors($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-demisexual($black: #000000, $white: #fff, $grey: #a4a4a4, $purple: #810081, $opacity: 1, $degrees: 180deg, $chunk: 1) {
