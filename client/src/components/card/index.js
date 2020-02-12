@@ -32,7 +32,7 @@ export default function Card(props) {
             </button>
             <div className="card__flag" style={backgroundStyle}></div>
             <div className="card__title">
-              {props.name} flag
+              {props.name} {props.type}
             </div>
           </div>
         </div>

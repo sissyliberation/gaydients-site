@@ -12,13 +12,15 @@ Object.keys(gaydients).forEach(key=>{
   const type = item[1];
   const value = gaydients[key];
 
-  let instance = {};
-  instance[type] = value;
+  let instance = {
+    'name': type,
+    'value': value,
+  };
 
-  if !((name in gaydientItems)) {
+  if (!(name in gaydientItems)) {
     gaydientItems[name] = [];
   }
-  
+
   gaydientItems[name].push(instance);
 });
 
@@ -27,7 +29,19 @@ export default function Grid(props) {
     <>
       <div className="grid">
         <div className="grid__container">
-
+        {
+          Object.keys(gaydientItems).map((item, i) => {
+            return(
+              <>
+              {
+                gaydientItems[item].map((iitem, ii) => {
+                  return (<Card name={item} type={iitem.name} value={iitem.value} key={`${i}__${ii}`} />);
+                })
+              }
+              </>
+            );
+          })
+        }
         </div>
       </div>
     </>
