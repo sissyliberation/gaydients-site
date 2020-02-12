@@ -75,7 +75,7 @@
     rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) percentage(($solidWidth * 4 + $gradientWidth * 3) / 100),
     rgba(nth($colors, 5), $opacity) percentage(($solidWidth * 4 + $gradientWidth * 4) / 100) percentage(($solidWidth * 5 + $gradientWidth * 4) / 100),
     rgba(nth($colors, 6), $opacity) percentage(($solidWidth * 5 + $gradientWidth * 5) / 100) percentage(($solidWidth * 6 + $gradientWidth * 5) / 100),
-    rgba(nth($colors, 7), $opacity) percentage(($solidWidth * 6 + $gradientWidth * 5) / 100) 100%
+    rgba(nth($colors, 7), $opacity) percentage(($solidWidth * 6 + $gradientWidth * 6) / 100) 100%
   );
 }
 
