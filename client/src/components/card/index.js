@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.scss';
 
-import clipboard from '../../img/clipboard.svg';
+import copy from '../../img/copy.svg';
 
 export default function Card(props) {
   const backgroundStyle = {
@@ -27,8 +27,8 @@ export default function Card(props) {
       <div className={className}>
         <div className="card__container">
           <div className="card__content">
-            <button className="card__copy" href="" onClick={e => handleCopy(e, copyText)}>
-              <img src={clipboard} className="card__clipboard" alt={`copy ${props.name} flag`} />
+            <button className="card__copy" onClick={e => handleCopy(e, copyText)}>
+              <img src={copy} className="card__clipboard" alt={`copy ${props.name} ${props.type}`} />
             </button>
             <div className="card__flag" style={backgroundStyle}></div>
             <div className="card__title">
