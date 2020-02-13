@@ -5,6 +5,7 @@ import CookieBanner from './components/cookie-banner';
 import Header from './components/header';
 import Footer from './components/footer';
 import Grid from './components/grid';
+import Hero from './components/hero';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       // <Header />
     }
     <main id="main">
+      <Hero />
       <>
         <Grid />
       </>
