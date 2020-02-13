@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss';
 
 import CookieBanner from './components/cookie-banner';
 import Header from './components/header';
@@ -11,7 +10,7 @@ function App() {
   const scrollClass = 'is-scrolled';
   const onScroll = () => {
     var top  = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     if (top) {
       document.body.classList.add(scrollClass);
     }
@@ -34,9 +33,8 @@ function App() {
         <Grid />
       </>
     </main>
-    {
-      // <Footer />
-    }
+
+    <Footer />
     </>
   );
 }
