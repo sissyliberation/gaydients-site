@@ -2,7 +2,8 @@
 
 .grid {
   @include section;
-
+  @include section-accent;
+  
   &__container {
     @include container;
     display: grid;
