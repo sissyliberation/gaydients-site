@@ -3,6 +3,8 @@
 
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html, body {
@@ -12,9 +14,8 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
-  font-weight: 400;
+  letter-spacing: 1.2px;
 }
-
 
 #root {
   display: flex;
