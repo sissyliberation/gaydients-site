@@ -5,6 +5,10 @@ $color-grey-box-shadow-hover: 23px 23px 90px #cbced0, -23px -23px 90px #ffffff;
 $color-lite: #fff;
 $color-dark: #000;
 
+/* font defaults */
+$font-heading: 'Sriracha', cursive;
+$font-main: 'Work Sans', sans-serif;
+
 /* spacing defaults */
 $space: 1rem;
 $space-half: $space * .75;
@@ -59,7 +63,7 @@ $transition-duration: 275ms;
   padding: $space-huge * 2 0;
 
   @include screen-lg {
-    padding: $space-huge * 4 0;
+    padding: $space-huge * 3 0;
   }
 }
 
