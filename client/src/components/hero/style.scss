@@ -1,8 +1,27 @@
 @import '../../variables';
 
 .hero {
+  $h: &;
   @include section();
   background-color: $color-lite;
+
+  body.is-scrolled & {
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 9rem;
+    }
+
+    #{$h}__title {
+      position: fixed;
+      top: 0;
+      left: $space-big;
+      z-index: 5;
+      font-size: 2rem;
+      @include transition(all);
+    }
+  }
 
   &__container {
     @include container;
