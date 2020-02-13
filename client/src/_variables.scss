@@ -2,6 +2,8 @@
 $color-grey: #F4F8FA;
 $color-grey-box-shadow: 20px 20px 60px #cfd3d5, -20px -20px 60px #ffffff;
 $color-grey-box-shadow-hover: 23px 23px 90px #cbced0, -23px -23px 90px #ffffff;
+$color-lite: #fff;
+$color-dark: #000;
 
 /* spacing defaults */
 $space: 1rem;
@@ -49,4 +51,17 @@ $transition-duration: 275ms;
   transition-timing-function: $transition-timing-function;
   transition-duration: $transition-duration;
   transition-property: $transition-property;
+}
+
+/* section defaults */
+@mixin section($padding: $space-huge) {
+  padding: $padding 0;
+
+  @include screen-lg {
+    padding: $padding * 1.5 0;
+  }
+}
+
+@mixin container($padding: $space-big) {
+  padding: 0 $padding;
 }

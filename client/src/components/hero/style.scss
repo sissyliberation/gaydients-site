@@ -1,100 +1,26 @@
 @import '../../variables';
 
-.card {
-  $c:&;
-  position: relative;
-  width: 100%;
-  box-shadow: $color-grey-box-shadow;
-  border-radius: 6px;
-  font-family: monospace;
-  letter-spacing: 3px;
-  color: rgba(35, 20, 29, 1);
-  overflow: hidden;
-  background-color: $color-grey;
-  @include transition(box-shadow);
-
-  &:after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-  }
+.hero {
+  @include section();
+  background-color: $color-lite;
 
   &__container {
-    position: absolute;
-    padding: $space;
-    width: 100%;
-    height: 100%;
-    @include transition(opacity);
-  }
-
-  &__content {
-    position: relative;
+    @include container;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100%;
-  }
-
-  &__copy {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 0;
-    display: flex;
-    padding: 0;
-    background-color: transparent;
-    text-decoration: none;
-    color: inherit;
-    opacity: .7;
-    @include transition(opacity);
-
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
+    align-items: center;
   }
 
   &__title {
-    position: absolute;;
-    bottom: 0;
-    left: 0;
+    font-size: 5rem;
+    margin: 2rem 0;
+    background-image: linear-gradient(90deg, #ff0018 0 16.66667%, #ffa52c 16.66667% 33.33333%, #ffff41 33.33333% 50%, #008018 50% 66.66667%, #0000f9 66.66667% 83.33333%, #86007d 83.33333% 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  &__flag {
-    position: relative;
-    width: 100%;
-    border-radius: 3px;
-
-    &:after {
-      content: "";
-      display: block;
-      padding-bottom: 60%;
-    }
-  }
-
-  &#{$c}--with-bar {
-      #{$c}__bar {
-        opacity: 1;
-        width: 100%;
-      }
-  }
-
-  &__bar {
-    width: 0%;
-    height: 2px;
-    background-color: black;
-    position: absolute;
-    bottom: 0;
-    opacity: 0;
-    @include transition(width);
-  }
-
-  &:hover {
-    box-shadow: $color-grey-box-shadow-hover;
-
-    #{$c}__container {
-      opacity: 1;
-    }
+  &__text {
+    text-align: center;
   }
 }
