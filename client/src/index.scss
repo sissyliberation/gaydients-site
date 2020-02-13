@@ -5,9 +5,16 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: $color-grey;
+html, body {
+  font-family: $font-main;
+  font-size: 14px;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 400;
+}
+
 
 #root {
   display: flex;

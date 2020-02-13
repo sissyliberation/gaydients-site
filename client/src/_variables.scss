@@ -2,6 +2,12 @@
 $color-grey: #F4F8FA;
 $color-grey-box-shadow: 20px 20px 60px #cfd3d5, -20px -20px 60px #ffffff;
 $color-grey-box-shadow-hover: 23px 23px 90px #cbced0, -23px -23px 90px #ffffff;
+$color-lite: #fff;
+$color-dark: #000;
+
+/* font defaults */
+$font-heading: 'Sriracha', cursive;
+$font-main: 'Work Sans', sans-serif;
 
 /* spacing defaults */
 $space: 1rem;
@@ -49,4 +55,30 @@ $transition-duration: 275ms;
   transition-timing-function: $transition-timing-function;
   transition-duration: $transition-duration;
   transition-property: $transition-property;
+}
+
+/* section defaults */
+@mixin section() {
+  position: relative;
+  padding: $space-huge * 2 0;
+
+  @include screen-lg {
+    padding: $space-huge * 3 0;
+  }
+}
+
+@mixin section-accent {
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: .25rem;
+    background-image: linear-gradient(90deg, #ff0018 0 16.66667%, #ffa52c 16.66667% 33.33333%, #ffff41 33.33333% 50%, #008018 50% 66.66667%, #0000f9 66.66667% 83.33333%, #86007d 83.33333% 100%);
+    top: 0;
+    position: absolute;
+  }
+}
+
+@mixin container($padding: $space-big) {
+  padding: 0 $padding;
 }
