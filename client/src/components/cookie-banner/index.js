@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './style.scss';
 
 export default function CookieBanner(props) {
+  const [shouldDisplayCookieExplanation, setShouldDisplayCookieExplanation] = useState(false);
+
+  const displayCookieExplanation = () => {
+    setShouldDisplayCookieExplanation(true);
+  }
   return (
     <>
       {
-        props.displayCookieExplanation &&
+        shouldDisplayCookieExplanation &&
         <div className="cookie-explanation">
-          we use cookies to save your settings, for basic Google Analytics, and for no other reason.
+          we use cookies for basic Google Analytics, and for no other reason. ever.
         </div>
       }
 
@@ -21,8 +26,8 @@ export default function CookieBanner(props) {
             <button className="cookie-banner__cta" onClick={props.onCookieBannerSelection}>no</button>
             <button className="cookie-banner__cta" onClick={props.onCookieBannerSelection}>yes</button>
             {
-              !props.displayCookieExplanation &&
-              <button className="cookie-banner__cta" onClick={props.onCookieExplanation}>what for?</button>
+              !shouldDisplayCookieExplanation &&
+              <button className="cookie-banner__cta" onClick={setShouldDisplayCookieExplanation}>what for?</button>
             }
           </div>
         </div>
