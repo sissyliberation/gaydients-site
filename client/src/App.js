@@ -24,7 +24,7 @@ function App() {
   return (
     <>
     {
-      // <CookieBanner />
+      <CookieBanner />
       // <Header />
     }
     <main id="main">
