@@ -1,8 +1,36 @@
 @import '../../variables';
 
 .footer {
+  $f: &;
+  position: relative;
+  @include section-accent;
+  padding: $space-big 0;
+  background-color: $color-dark;
+  color: $color-lite;
+
+  @include screen-lg {
+    padding: $space-huge 0;
+  }
+
   &__container {
+    @include container;
     display: flex;
     justify-content: space-between;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    font-family: $font-heading;
+
+    &:not(:first-child) {
+      margin-left: $space;
+    }
+  }
+
+  &__made-by {
+    #{$f}__link {
+      @include trans-text;
+    }
   }
 }
