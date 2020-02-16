@@ -13,21 +13,26 @@ function App() {
   const cookieConsent = cookie.load(cookieConsentName);
   const [hasCookieResponse, setCookieResponse] = useState(cookieConsent);
 
+  const initializeCookieConsent = () => {
+    ReactGA.initialize('UA-158649316-1');
+    ReactGA.pageview('/');
+  };
+
   const giveCookieConsentResponse = (gaveConsent) => {
     cookie.save(cookieConsentName, gaveConsent, { path: '/' });
     setCookieResponse(gaveConsent);
 
     if (gaveConsent) {
+      initializeCookieConsent();
       ReactGA.event({
         category: 'Cookie Consent',
         action: 'Click Okay'
       });
     }
-  }
+  };
 
   if (cookieConsent) {
-    ReactGA.initialize('UA-158649316-1');
-    ReactGA.pageview('/');
+    initializeCookieConsent();
   }
 
   // handle scroll event
