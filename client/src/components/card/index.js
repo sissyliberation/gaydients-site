@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import './style.scss';
-
-import copy from '../../img/copy.svg';
+import copyImg from '../../img/copy.svg';
 
 export default function Card(props) {
-  const backgroundStyle = {
-    backgroundImage: props.value
-  };
-
+  const backgroundStyle = { backgroundImage: props.value };
   const copyText = `background-image: ${props.value};`;
-
   const [className, setClassName] = useState('card');
 
   const handleCopy = (e, copyText) => {
@@ -28,7 +23,7 @@ export default function Card(props) {
         <div className="card__container">
           <div className="card__content">
             <button className="card__copy" onClick={(e) => handleCopy(e, copyText)}>
-              <img src={copy} className="card__clipboard" alt={`copy ${props.name} ${props.type}`} />
+              <img src={copyImg} className="card__clipboard" alt={`copy ${props.name} ${props.type}`} />
             </button>
             <div className="card__flag" style={backgroundStyle}></div>
             <div className="card__title">

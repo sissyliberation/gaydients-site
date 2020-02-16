@@ -69,10 +69,13 @@
     color: $color-lite;
     border: 0;
     background: transparent;
-    margin-left: 1em;
     padding: .25em .5em;
     cursor: pointer;
     @include transition(color);
+
+    &:not(:first-child) {
+      margin-left: 1em;
+    }
 
     body.is-scrolled & {
       color: $color-dark;
