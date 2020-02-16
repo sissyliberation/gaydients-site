@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
+import ReactGA from 'react-ga';
 import './style.scss';
-
-import copy from '../../img/copy.svg';
+import copyImg from '../../img/copy.svg';
 
 export default function Card(props) {
-  const backgroundStyle = {
-    backgroundImage: props.value
-  };
-
+  const backgroundStyle = { backgroundImage: props.value };
   const copyText = `background-image: ${props.value};`;
-
   const [className, setClassName] = useState('card');
 
   const handleCopy = (e, copyText) => {
     e.preventDefault();
+
     navigator.clipboard.writeText(copyText);
     setClassName('card card--with-bar');
+
+    if (props.hasCookieResponse) {
+      var action = e.currentTarget.attributes.getNamedItem('data-description').value;
+
+      ReactGA.event({
+        category: 'Copy Item',
+        action: action
+      })
+    }
 
     setTimeout(() => {
       setClassName('card');
@@ -27,8 +33,8 @@ export default function Card(props) {
       <div className={className}>
         <div className="card__container">
           <div className="card__content">
-            <button className="card__copy" onClick={(e) => handleCopy(e, copyText)}>
-              <img src={copy} className="card__clipboard" alt={`copy ${props.name} ${props.type}`} />
+            <button className="card__copy" onClick={(e) => handleCopy(e, copyText)} data-description={`${props.name} ${props.type}`}>
+              <img src={copyImg} className="card__clipboard" alt={`copy ${props.name} ${props.type}`} />
             </button>
             <div className="card__flag" style={backgroundStyle}></div>
             <div className="card__title">
