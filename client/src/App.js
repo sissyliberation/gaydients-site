@@ -10,29 +10,23 @@ import Hero from './components/hero';
 function App() {
   // handle cookies
   const cookieConsentName = 'gaydients__cookie-consent';
-
   const cookieConsent = cookie.load(cookieConsentName);
-  console.log(cookieConsent);
-
   const [hasCookieResponse, setCookieResponse] = useState(cookieConsent);
-  console.log(hasCookieResponse);
 
   const giveCookieConsentResponse = (gaveConsent) => {
-    console.log(gaveConsent);
-    // 
-    // cookie.save(cookieConsentName, gaveConsent, { path: '/' });
-    // setCookieResponse(gaveConsent);
-    //
-    // if (gaveConsent) {
-    //   ReactGA.event({
-    //     category: 'Cookie Consent',
-    //     action: 'Click Okay'
-    //   });
-    // }
+    cookie.save(cookieConsentName, gaveConsent, { path: '/' });
+    setCookieResponse(gaveConsent);
+
+    if (gaveConsent) {
+      ReactGA.event({
+        category: 'Cookie Consent',
+        action: 'Click Okay'
+      });
+    }
   }
 
   if (cookieConsent) {
-    ReactGA.initialize('UA-113771362-1');
+    ReactGA.initialize('UA-158649316-1');
     ReactGA.pageview('/');
   }
 
@@ -58,11 +52,8 @@ function App() {
     }
     <main id="main">
       <Hero />
-      <>
-        <Grid />
-      </>
+      <Grid />
     </main>
-
     <Footer />
     </>
   );
