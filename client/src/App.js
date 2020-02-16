@@ -52,7 +52,7 @@ function App() {
     }
     <main id="main">
       <Hero />
-      <Grid />
+      <Grid hasCookieResponse={hasCookieResponse}/>
     </main>
     <Footer />
     </>

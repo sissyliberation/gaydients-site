@@ -35,7 +35,7 @@ export default function Grid(props) {
               <>
               {
                 gaydientItems[item].map((iitem, ii) => {
-                  return (<Card name={item} type={iitem.name} value={iitem.value} key={`${i}__${ii}`} />);
+                  return (<Card name={item} type={iitem.name} value={iitem.value} key={`${i}__${ii}`} hasCookieResponse={props.hasCookieResponse} />);
                 })
               }
               </>

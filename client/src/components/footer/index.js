@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.scss';
+import githubImg from '../../img/github.svg';
 
 export default function Footer(props) {
   return (
@@ -10,7 +11,7 @@ export default function Footer(props) {
           <a
             className="footer__link" target="_blank" rel="noopener noreferrer"
             href="https://github.com/novacourtois/gaydients">
-            GitHub
+            <img src={githubImg} alt={'github link'} />
           </a>
           </div>
           <div className="footer__right">
