@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import ReactGA from 'react-ga';
 import './style.scss';
 import copyImg from '../../img/copy.svg';
+import variables from '../../_variables.scss';
 
 export default function Card(props) {
+  const transitionDuration = parseInt(variables.transitionDuration);
   const backgroundStyle = { backgroundImage: props.value };
   const copyText = `background-image: ${props.value};`;
   const [className, setClassName] = useState('card');
@@ -25,7 +27,7 @@ export default function Card(props) {
 
     setTimeout(() => {
       setClassName('card');
-    }, 275);
+    }, transitionDuration);
   };
 
   return (
