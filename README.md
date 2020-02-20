@@ -109,8 +109,8 @@ function used to generate agender flag
 | $degrees | 180deg | degrees at which gradient is rendered | degrees |
 | $chunk | 1 | how solid each color portion is | number between 0 and 1 (inclusive) |
 
-### gaydient-interset
-function used to generate interset flag
+### gaydient-intersex
+function used to generate intersex flag
 
 | parameter | default value | description | type |
 | ------ | ------ | ------ | ------ |
@@ -119,7 +119,7 @@ function used to generate interset flag
 | $opacity | 1 | the opacity of each color | number between 0 and 1 (inclusive) |
 | $degrees | 180deg | degrees at which gradient is rendered | degrees |
 | $chunk | 1 | how solid each color portion is | number between 0 and 1 (inclusive) |
-| $flag | true | determites whether to render a flag or gradient | bool |
+| $flag | true | determines whether to render a flag or gradient | bool |
 
 ### gaydient-bisexual
 function used to generate bisexual flag
