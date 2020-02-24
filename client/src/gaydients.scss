@@ -1,3 +1,7 @@
+@function gaydients-linear-gradient($colors, $opacity, $degrees, $chunk) {
+  
+}
+
 @function gaydient-two-colors($colors, $opacity, $degrees, $chunk) {
   $sections: 2;
   $solidWidth: 100 / $sections * $chunk;
