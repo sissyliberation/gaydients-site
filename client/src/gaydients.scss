@@ -1,136 +1,70 @@
-@function gaydient-two-colors($colors, $opacity, $degrees, $chunk) {
-  $sections: 2;
+@function gaydients-linear-gradient($colors, $opacity, $degrees, $chunk) {
+  $sections: length($colors);
   $solidWidth: 100 / $sections * $chunk;
   $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
+  $gradientValue: "#{rgba(nth($colors, 1), $opacity)} 0 #{percentage($solidWidth / 100)}";
 
-  @return linear-gradient($degrees,
-    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
-    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100)
-  );
-}
+  @for $i from 2 through ($sections - 1) {
+    $gradientValue : $gradientValue + ", #{rgba(nth($colors, $i), $opacity)} #{percentage((($solidWidth * ($i - 1)) + ($gradientWidth * ($i - 1))) / 100)} #{percentage(($solidWidth * $i + ($gradientWidth * ($i - 1))) / 100)}";
+  }
 
-@function gaydient-three-colors($colors, $opacity, $degrees, $chunk) {
-  $sections: 3;
-  $solidWidth: 100 / $sections * $chunk;
-  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
+  $gradientValue : $gradientValue + ", #{rgba(nth($colors, $sections), $opacity)} #{percentage(($solidWidth * ($sections - 1) + $gradientWidth * ($sections - 1)) / 100) 100%}";
 
-  @return linear-gradient($degrees,
-    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
-    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
-    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) 100%
-  );
-}
-
-@function gaydient-four-colors($colors, $opacity, $degrees, $chunk) {
-  $sections: 4;
-  $solidWidth: 100 / $sections * $chunk;
-  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
-
-  @return linear-gradient($degrees,
-    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
-    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
-    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
-    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) 100%
-  );
-}
-
-@function gaydient-five-colors($colors, $opacity, $degrees, $chunk) {
-  $sections: 5;
-  $solidWidth: 100 / $sections * $chunk;
-  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
-
-  @return linear-gradient($degrees,
-    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
-    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
-    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
-    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) percentage(($solidWidth * 4 + $gradientWidth * 3) / 100),
-    rgba(nth($colors, 5), $opacity) percentage(($solidWidth * 4 + $gradientWidth * 4) / 100) 100%
-  );
-}
-
-@function gaydient-six-colors($colors, $opacity, $degrees, $chunk) {
-  $sections: 6;
-  $solidWidth: 100 / $sections * $chunk;
-  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
-
-  @return linear-gradient($degrees,
-    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
-    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
-    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
-    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) percentage(($solidWidth * 4 + $gradientWidth * 3) / 100),
-    rgba(nth($colors, 5), $opacity) percentage(($solidWidth * 4 + $gradientWidth * 4) / 100) percentage(($solidWidth * 5 + $gradientWidth * 4) / 100),
-    rgba(nth($colors, 6), $opacity) percentage(($solidWidth * 5 + $gradientWidth * 5) / 100) 100%
-  );
-}
-
-@function gaydient-seven-colors($colors, $opacity, $degrees, $chunk) {
-  $sections: 7;
-  $solidWidth: 100 / $sections * $chunk;
-  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
-
-  @return linear-gradient($degrees,
-    rgba(nth($colors, 1), $opacity) 0 percentage($solidWidth / 100),
-    rgba(nth($colors, 2), $opacity) percentage(($solidWidth + $gradientWidth) / 100) percentage(($solidWidth * 2 + $gradientWidth) / 100),
-    rgba(nth($colors, 3), $opacity) percentage(($solidWidth * 2 + $gradientWidth * 2) / 100) percentage(($solidWidth * 3 + $gradientWidth * 2) / 100),
-    rgba(nth($colors, 4), $opacity) percentage(($solidWidth * 3 + $gradientWidth * 3) / 100) percentage(($solidWidth * 4 + $gradientWidth * 3) / 100),
-    rgba(nth($colors, 5), $opacity) percentage(($solidWidth * 4 + $gradientWidth * 4) / 100) percentage(($solidWidth * 5 + $gradientWidth * 4) / 100),
-    rgba(nth($colors, 6), $opacity) percentage(($solidWidth * 5 + $gradientWidth * 5) / 100) percentage(($solidWidth * 6 + $gradientWidth * 5) / 100),
-    rgba(nth($colors, 7), $opacity) percentage(($solidWidth * 6 + $gradientWidth * 6) / 100) 100%
-  );
+  @return linear-gradient($degrees, unquote($gradientValue));
 }
 
 @function gaydient-rainbow($red: #ff0018, $orange: #ffa52c, $yellow: #ffff41, $green: #008018, $blue: #0000f9, $purple: #86007d, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $red, $orange, $yellow, $green, $blue, $purple;
 
-  @return gaydient-six-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $blue, $pink, $white, $pink, $blue;
 
-  @return gaydient-five-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-enby($yellow: #fff433, $white: #fff, $purple: #9b59d0, $black: #000, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $yellow, $white, $purple, $black;
 
-  @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-genderqueer($lavender: #b77fdd, $white: #fff, $green: #48821e, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $lavender, $white, $green;
 
-  @return gaydient-three-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-ace($black: #000, $grey: #a4a4a4, $white: #fff, $purple: #810081, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $black, $grey, $white, $purple;
 
-  @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-pansexual($pink: #ff1b8d, $yellow: #ffda00, $blue: #1bb3ff, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $pink, $yellow, $blue;
 
-  @return gaydient-three-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-aro($green: #3aa63f, $lightgreen: #a8d47a, $white: #ffffff, $grey: #aaaaaa, $black: #000000, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $green, $lightgreen, $white, $grey, $black;
 
-  @return gaydient-five-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-agender($black: #000000, $grey: #bababa, $white: #ffffff, $green: #baf584, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $black, $grey, $white, $green, $white, $grey, $black;
 
-  @return gaydient-seven-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-demisexual($black: #000000, $white: #fff, $grey: #a4a4a4, $purple: #810081, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $black, $white, $grey, $purple;
 
-  @return gaydient-four-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-intersex($yellow: #ffda00, $purple: #7a00ac, $opacity: 1, $degrees: 180deg, $chunk: 1, $flag: true) {
@@ -144,13 +78,13 @@
     );
   }
 
-  @return gaydient-two-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-bisexual($pink: #d60270, $purple: #9b4f96, $blue: #0038a8, $opacity: 1, $degrees: 180deg, $chunk: 1, $flag: true) {
   $colors: $pink, $pink, $purple, $blue, $blue;
 
-  @return gaydient-five-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 :export {
