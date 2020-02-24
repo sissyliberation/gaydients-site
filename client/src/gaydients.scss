@@ -1,5 +1,16 @@
 @function gaydients-linear-gradient($colors, $opacity, $degrees, $chunk) {
-  
+  $sections: length($colors);
+  $solidWidth: 100 / $sections * $chunk;
+  $gradientWidth: (100 - ($solidWidth * $sections)) / ($sections - 1);
+  $gradientValue: "#{rgba(nth($colors, 1), $opacity)} 0 #{percentage($solidWidth / 100)}";
+
+  @for $i from 2 through ($sections - 1) {
+    $gradientValue : $gradientValue + ", #{rgba(nth($colors, $i), $opacity)} #{percentage((($solidWidth * ($i - 1)) + ($gradientWidth * ($i - 1))) / 100)} #{percentage(($solidWidth * $i + ($gradientWidth * ($i - 1))) / 100)}";
+  }
+
+  $gradientValue : $gradientValue + ", #{rgba(nth($colors, $sections), $opacity)} #{percentage(($solidWidth * ($sections - 1) + $gradientWidth * ($sections - 1)) / 100) 100%}";
+
+  @return linear-gradient($degrees, unquote($gradientValue));
 }
 
 @function gaydient-two-colors($colors, $opacity, $degrees, $chunk) {
@@ -86,7 +97,7 @@
 @function gaydient-rainbow($red: #ff0018, $orange: #ffa52c, $yellow: #ffff41, $green: #008018, $blue: #0000f9, $purple: #86007d, $opacity: 1, $degrees: 180deg, $chunk: 1) {
   $colors: $red, $orange, $yellow, $green, $blue, $purple;
 
-  @return gaydient-six-colors($colors, $opacity, $degrees, $chunk);
+  @return gaydients-linear-gradient($colors, $opacity, $degrees, $chunk);
 }
 
 @function gaydient-trans($blue: #55cdfc, $pink: #f7a8b8, $white: #fff, $opacity: 1, $degrees: 180deg, $chunk: 1) {
