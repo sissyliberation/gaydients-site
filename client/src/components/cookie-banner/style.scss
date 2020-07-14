@@ -5,15 +5,19 @@
   @include section;
   background-color: $color-dark;
   color: $color-lite;
-  @include transition(background-color, padding);
+  @include transition(background-color, padding, height);
   @include section-accent;
   padding: $space-big 0;
   $font-family: $font-heading;
-  font-size: 1.5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   body.is-scrolled & {
     background-color: transparent;
     color: $color-dark;
+    height: 4rem;
 
     padding: $space 0;
     @include screen-lg {
@@ -21,12 +25,12 @@
     }
 
     ~.footer {
-      margin-bottom: 4.2rem;
+      margin-bottom: 4rem;
     }
   }
 
   ~ .footer {
-    margin-bottom: 8.5rem;
+    margin-bottom: 5rem;
   }
 
   @include screen-lg {
@@ -43,6 +47,7 @@
 
   &__container {
     @include container;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,11 +99,9 @@
   color: $color-lite;
   @include transition(background-color, padding);
   padding: .5rem 1.5rem;
-  height: 48px;
   display: flex;
   align-items: center;
-
-  height: 32px;
+  height: 2rem;
 
   body.is-scrolled & {
     background-color: transparent;
@@ -106,9 +109,10 @@
   }
 
   ~ .footer {
-    margin-bottom: 10.5rem;
+    margin-bottom: 7rem;
+
     body.is-scrolled & {
-      margin-bottom: 6.5rem;
+      margin-bottom: 6rem;
     }
   }
 
