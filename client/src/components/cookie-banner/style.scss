@@ -9,7 +9,10 @@
   @include section-accent;
   padding: $space-big 0;
   $font-family: $font-heading;
-  font-size: 1.5rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   body.is-scrolled & {
     background-color: transparent;
@@ -43,6 +46,7 @@
 
   &__container {
     @include container;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,11 +98,9 @@
   color: $color-lite;
   @include transition(background-color, padding);
   padding: .5rem 1.5rem;
-  height: 48px;
   display: flex;
   align-items: center;
-
-  height: 32px;
+  height: 2rem;
 
   body.is-scrolled & {
     background-color: transparent;
