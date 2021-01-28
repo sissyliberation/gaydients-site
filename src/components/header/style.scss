@@ -2,18 +2,27 @@
 
 .header {
   $h: &;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: $space-big;
 
   &__container {
     display: flex;
   }
 
-  &__logo-link {
-    display: block;
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: $space-big;
   }
 
-  &__logo {
+  &__link {
     display: block;
-    height: 48px;
-    width: auto;
+    text-decoration: none;
+    color: $color-dark;
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Header from './components/header';
 import Footer from './components/footer';
 import Grid from './components/grid';
 import Hero from './components/hero';
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <>
+    <Header />
     <main id="main">
       <Hero />
       <Grid />
