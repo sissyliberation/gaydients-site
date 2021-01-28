@@ -10,7 +10,6 @@
     "node-sass": "^4.13.1",
     "normalize.scss": "^0.1.0",
     "react": "^16.12.0",
-    "react-cookies": "^0.1.1",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.1"
   },

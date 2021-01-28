@@ -7,9 +7,9 @@ import gaydients from 'gaydients';
 let gaydientItems = {};
 
 Object.keys(gaydients).forEach(key=>{
-  console.log(key);
   let name;
   let type;
+
   if (key.includes('Flag')) {
     const strIndex = key.indexOf('Flag');
     name = key.substring(0, strIndex);
@@ -20,7 +20,7 @@ Object.keys(gaydients).forEach(key=>{
     name = key.substring(0, strIndex);
     type = 'gradient';
   }
-  
+
   const value = gaydients[key];
 
   let instance = {
@@ -46,7 +46,7 @@ export default function Grid(props) {
               <>
               {
                 gaydientItems[item].map((iitem, ii) => {
-                  return (<Card name={item} type={iitem.name} value={iitem.value} key={`${i}__${ii}`} hasCookieResponse={props.hasCookieResponse} />);
+                  return (<Card name={item} type={iitem.name} value={iitem.value} key={`${i}__${ii}`} />);
                 })
               }
               </>
