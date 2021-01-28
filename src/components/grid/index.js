@@ -3,18 +3,30 @@ import './style.scss';
 
 import Card from '../card';
 
-import gaydients from '../../gaydients.scss';
+import gaydients from 'gaydients';
 let gaydientItems = {};
 
 Object.keys(gaydients).forEach(key=>{
-  const item = key.split('--');
-  const name = item[0];
-  const type = item[1];
+  let name;
+  let type;
+
+  if (key.includes('Flag')) {
+    const strIndex = key.indexOf('Flag');
+    name = key.substring(0, strIndex);
+    type = 'flag';
+  }
+  else {
+    const strIndex = key.indexOf('Gradient');
+    name = key.substring(0, strIndex);
+    type = 'gradient';
+  }
+
   const value = gaydients[key];
 
   let instance = {
     'name': type,
     'value': value,
+    'key': `${name}__${type}`
   };
 
   if (!(name in gaydientItems)) {
@@ -35,7 +47,7 @@ export default function Grid(props) {
               <>
               {
                 gaydientItems[item].map((iitem, ii) => {
-                  return (<Card name={item} type={iitem.name} value={iitem.value} key={`${i}__${ii}`} hasCookieResponse={props.hasCookieResponse} />);
+                  return (<Card name={item} type={iitem.name} value={iitem.value} key={iitem.key} />);
                 })
               }
               </>

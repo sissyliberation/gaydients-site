@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReactGA from 'react-ga';
 import './style.scss';
 import copyImg from '../../img/copy.svg';
 import variables from '../../_variables.scss';
@@ -15,15 +14,6 @@ export default function Card(props) {
 
     navigator.clipboard.writeText(copyText);
     setClassName('card card--with-bar');
-
-    if (props.hasCookieResponse) {
-      var action = e.currentTarget.attributes.getNamedItem('data-description').value;
-
-      ReactGA.event({
-        category: 'Copy Item',
-        action: action
-      })
-    }
 
     setTimeout(() => {
       setClassName('card');

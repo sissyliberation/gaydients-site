@@ -10,6 +10,12 @@ export default function Card(props) {
         <p className="hero__text">
           gaydients is a collection of lgbtqiap+ gradients made with css. they help make the web gay. free and always will be.
         </p>
+
+        <pre>
+          <code>
+          yarn add gaydients
+          </code>
+        </pre>
       </div>
     </section>
     </>

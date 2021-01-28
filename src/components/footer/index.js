@@ -10,15 +10,15 @@ export default function Footer(props) {
           <div className="footer__left">
           <a
             className="footer__link" target="_blank" rel="noopener noreferrer"
-            href="https://github.com/novacourtois/gaydients">
+            href="https://github.com/anarchotechqueer/gaydients">
             <img src={githubImg} alt={'github link'} />
           </a>
           </div>
           <div className="footer__right">
             <div className="footer__made-by">
-              // made by <a
+              made by <a
                 className="footer__link" target="_blank" rel="noopener noreferrer"
-                href="https://novacourtois.github.io/">
+                href="https://nova-skye.now.sh/">
                 nova skye</a>
             </div>
           </div>

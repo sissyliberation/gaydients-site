@@ -1,0 +1,28 @@
+@import '../../variables';
+
+.header {
+  $h: &;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: $space-big;
+
+  &__container {
+    display: flex;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: $space-big;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $color-dark;
+  }
+}
