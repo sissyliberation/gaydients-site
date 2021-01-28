@@ -40,4 +40,9 @@
   &__text {
     text-align: center;
   }
+
+  pre {
+    padding: $space $space-big;
+    background-color: #F4F4F6;
+  }
 }
