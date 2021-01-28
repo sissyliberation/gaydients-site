@@ -7,7 +7,7 @@ export default function Header(props) {
       <header class="header">
         <div class="header__container">
           <nav class="header__nav">
-          <a href="https://github.com/anarchotechqueer/gaydients" className="header__link">
+          <a href="https://github.com/anarchotechqueer/gaydients" target="_blank" rel="noopener noreferrer" className="header__link">
             GitHub
           </a>
           </nav>
