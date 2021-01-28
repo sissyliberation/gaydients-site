@@ -29,6 +29,11 @@
   }
 
   &__made-by {
+
+    &:before {
+      content: "// ";
+    }
+
     #{$f}__link {
       @include trans-text;
     }

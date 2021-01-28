@@ -26,6 +26,7 @@ Object.keys(gaydients).forEach(key=>{
   let instance = {
     'name': type,
     'value': value,
+    'key': `${name}__${type}`
   };
 
   if (!(name in gaydientItems)) {
@@ -46,7 +47,7 @@ export default function Grid(props) {
               <>
               {
                 gaydientItems[item].map((iitem, ii) => {
-                  return (<Card name={item} type={iitem.name} value={iitem.value} key={`${i}__${ii}`} />);
+                  return (<Card name={item} type={iitem.name} value={iitem.value} key={iitem.key} />);
                 })
               }
               </>

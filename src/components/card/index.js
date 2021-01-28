@@ -15,10 +15,6 @@ export default function Card(props) {
     navigator.clipboard.writeText(copyText);
     setClassName('card card--with-bar');
 
-    if (props.hasCookieResponse) {
-      var action = e.currentTarget.attributes.getNamedItem('data-description').value;
-    }
-
     setTimeout(() => {
       setClassName('card');
     }, transitionDuration);
