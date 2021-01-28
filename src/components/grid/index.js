@@ -3,13 +3,24 @@ import './style.scss';
 
 import Card from '../card';
 
-import gaydients from '../../gaydients.scss';
+import gaydients from 'gaydients';
 let gaydientItems = {};
 
 Object.keys(gaydients).forEach(key=>{
-  const item = key.split('--');
-  const name = item[0];
-  const type = item[1];
+  console.log(key);
+  let name;
+  let type;
+  if (key.includes('Flag')) {
+    const strIndex = key.indexOf('Flag');
+    name = key.substring(0, strIndex);
+    type = 'flag';
+  }
+  else {
+    const strIndex = key.indexOf('Gradient');
+    name = key.substring(0, strIndex);
+    type = 'gradient';
+  }
+  
   const value = gaydients[key];
 
   let instance = {

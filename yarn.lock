@@ -4576,6 +4576,11 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
+gaydients@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gaydients/-/gaydients-1.0.0.tgz#359fd88c91a027f7930b96be1f12c16419309140"
+  integrity sha512-xMa8NZlstEdZ0Q1T0OgwWq0EwmfzHv6tLGkS/xn3iyoef27bznqloZ3i6xshRVE2WC592/N51nmNI4lMfeBD5A==
+
 gaze@^1.0.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/gaze/-/gaze-1.1.3.tgz#c441733e13b927ac8c0ff0b4c3b033f28812924a"
