@@ -7,17 +7,18 @@ import gaydients from 'gaydients';
 let gaydientItems = {};
 
 Object.keys(gaydients).forEach(key=>{
+  let convertedName = key.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
   let name;
   let type;
 
-  if (key.includes('Flag')) {
-    const strIndex = key.indexOf('Flag');
-    name = key.substring(0, strIndex);
+  if (convertedName.includes('-flag')) {
+    const strIndex = convertedName.indexOf('-flag');
+    name = convertedName.substring(0, strIndex).replace('-', ' ');
     type = 'flag';
   }
   else {
-    const strIndex = key.indexOf('Gradient');
-    name = key.substring(0, strIndex);
+    const strIndex = convertedName.indexOf('-gradient');
+    name = convertedName.substring(0, strIndex).replace('-', ' ');
     type = 'gradient';
   }
 
