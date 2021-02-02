@@ -4,9 +4,9 @@ import './style.scss';
 export default function Header(props) {
   return (
     <>
-      <header class="header">
-        <div class="header__container">
-          <nav class="header__nav">
+      <header className="header">
+        <div className="header__container">
+          <nav className="header__nav">
           <a href="https://github.com/anarchotechqueer/gaydients" target="_blank" rel="noopener noreferrer" className="header__link">
             GitHub
           </a>
