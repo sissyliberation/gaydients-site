@@ -4571,10 +4571,10 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-gaydients@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/gaydients/-/gaydients-1.0.2.tgz#909aa56ac7790c6b43951d1cf1cc1af9249e4a1d"
-  integrity sha512-HaZ5dENNguXL3QBAKTA2dZ/fuOmO6IiNExp5H+1NNsJWy++prIo1HuIhK3YVqNxYmROENl/XNpj5XiM20qoxLQ==
+gaydients@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gaydients/-/gaydients-1.0.4.tgz#24b8bb552ee14e6c30082e085dd147e4a5e5350b"
+  integrity sha512-S/BCGaMF/ieHBQUCv3yDT4Yq0cYr1gYwKuEHYNiLt3oLrI/bmiI3q9Ivwcfdztdodfm0qkTRPFbRKhGsPH/qYg==
 
 gaze@^1.0.0:
   version "1.1.3"
