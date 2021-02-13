@@ -33,9 +33,5 @@
     &:before {
       content: "// ";
     }
-
-    #{$f}__link {
-      @include trans-text;
-    }
   }
 }

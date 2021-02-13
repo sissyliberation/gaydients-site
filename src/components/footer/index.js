@@ -18,7 +18,7 @@ export default function Footer(props) {
             <div className="footer__made-by">
               made by <a
                 className="footer__link" target="_blank" rel="noopener noreferrer"
-                href="https://nova-skye.now.sh/">
+                href="https://disregardingstandards.com/">
                 nova skye</a>
             </div>
           </div>
